@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# 🏐 Volleyball Player Form
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React + Vite + TypeScript + Bootstrap
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🇬🇧 English
 
-## React Compiler
+### 📖 Description
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This project is a learning-oriented React application built with **Vite**, **TypeScript**, and **Bootstrap**.
 
-## Expanding the ESLint configuration
+It displays a volleyball player form where the user selects a playing position:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- Setter
+- Middle Blocker
+- Opposite
+- Outside Hitter
+- Libero
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Based on the selected position, the app dynamically shows:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- The main characteristics of that role
+- Three well-known professional players for the position
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+The goal of this project is to practice **clean React architecture**, **component separation**, and **TypeScript best practices**.
+
+---
+
+### 🧱 Tech Stack
+
+- ⚛️ React
+- ⚡ Vite
+- 🟦 TypeScript
+- 🎨 Bootstrap 5
+
+---
+
+### 🗂️ Project Structure
+
+```txt
+src/
+├─ App.tsx
+├─ main.tsx
+└─ components/
+   ├─ PlayerForm/
+   │  ├─ PlayerForm.tsx
+   │  ├─ PositionSelect.tsx
+   │  ├─ PositionInfo.tsx
+   │  └─ positions/
+   │     ├─ SetterInfo.tsx
+   │     ├─ MiddleInfo.tsx
+   │     ├─ OppositeInfo.tsx
+   │     ├─ OutsideInfo.tsx
+   │     └─ LiberoInfo.tsx
+   └─ common/
+      └─ PlayerCard.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+🧠 Architecture Decisions
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Single responsibility components
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+One main container component (PlayerForm) for state and logic
+
+Presentational components per volleyball position
+
+Reusable UI components (PlayerCard)
+
+Strict TypeScript typing
+
+Bootstrap imported via npm (no CDN)
+
+Learning Goals
+
+Understand React component composition
+
+Practice TypeScript with React
+
+Conditional rendering
+
+Basic Bootstrap styling
+
+Organize a scalable React project
